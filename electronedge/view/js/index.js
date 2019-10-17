@@ -1,0 +1,2 @@
+
+initRequire.demo()

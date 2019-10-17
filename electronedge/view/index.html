@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+
+
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <div id="demo">123test</div>
+    <button id="btn">test</button>
+    We are using node
+    <script>document.write(process.versions.node)</script>,
+    Chrome
+    <script>document.write(process.versions.chrome)</script>,
+    and Electron
+    <script>document.write(process.versions.electron)</script>.
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+    <script>window.$ = window.jQuery = require('./js/jquery-3.4.1.min.js');</script>
+    <script type="text/javascript" src="./js/init.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript">
+        $("#btn").click(function () {
+            initRequire.demo("test", (err, value) => {
+                $("#demo").append(value);
+                $("#demo").text(value);
+            });
+            setInterval(()=>{
+                initRequire.demo2("test", (err, value) => {
+                $("#demo").append(value);
+                $("#demo").text(value);
+            });
+            }, 1500);
+           
+        });
+
+    </script>
+</body>
+
+</html>
